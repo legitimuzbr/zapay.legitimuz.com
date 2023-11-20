@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sorte Esportiva - Verificação</title>
+    <title>Zapay - Verificação</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="icon" type="image/png" href="https://static.springbuilder.site/fs/userFiles-v2/sorteesportiva-rebranding-18752881/images/favicon.png?v=1680873739" />
+    <link rel="icon" type="image/png" href="https://d26psxpzb34431.cloudfront.net/zapay/favicon.ico" />
     <style>
       html, body {
         height: 100%;
@@ -14,13 +14,13 @@
     }
         body {
             
-            background-color: #0C0C28;
+            background-color: rgba(0, 0, 0, 0.9);
             color: #EAEAEA;
         }
         .custom-card {
             max-width: 400px;
             width: 100%;
-            background-color: #1C1C3D;
+            background-color: rgba(0, 0, 0, 0.9);
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -35,9 +35,9 @@
   <body class="d-flex justify-content-center align-items-center flex-column" onload="checkCpf()">
 
       
-    <div class="custom-card text-center">
+    <div class="custom-card text-center py-5 px-4">
       
-        <img src="logose.png" alt="Sorte Esportiva" class="img-fluid" width="50%">
+        <img src="logozap.svg" alt="Zapay" class="img-fluid" width="50%">
 
         <h3 class="my-4"> Digite seu CPF: </h3>
         <div class="my-3">
@@ -60,11 +60,9 @@
     <script lang="text/javascript">
       const legitimuz = Legitimuz({
         host: "https://api.legitimuz.com",
-        token: "eb1ace6a-b58c-4de4-b4ca-e0426ebc2875",
+        token: "176512e3-43e6-479a-8dd8-fd58fa8acb8d",
         onSuccess: (eventName) => {
-          if (data === "facematch") {
-            location.href = "https://google.com/"
-          }
+          console.log(eventName); // ocr | facematch
         },
         onError: (eventName) => {
           console.log(eventName); // ocr | facematch
@@ -74,19 +72,19 @@
     legitimuz.mount();
     </script>
 
-    <script>
+<script>
 
-      function checkCpf() {
-        const parametros = location.search;
-        const parametro = parametros.split("=")[0]
-        const valor = parametros.split("=")[1]
+  function checkCpf() {
+    const parametros = location.search;
+    const parametro = parametros.split("=")[0]
+    const valor = parametros.split("=")[1]
 
-        if(parametro == "?cpf") {
-          document.querySelector("#legitimuz-hydrate-cpf").value = valor
-        }
-      }
+    if(parametro == "?cpf") {
+      document.querySelector("#legitimuz-hydrate-cpf").value = valor
+    }
+  }
 
-    function legitimuzLinkOn() {
+  function legitimuzLinkOn() {
       document.querySelector("#brand").style.textDecoration = 'underline';
       document.querySelector("#brand").style.cursor = 'pointer';
     }
@@ -99,8 +97,7 @@
     window.open("https://legitimuz.com/", "_blank");
 }
 
-
-    </script>
+</script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyyq46cDfL" crossorigin="anonymous"></script>
   </body>
