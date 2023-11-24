@@ -61,12 +61,7 @@
       const legitimuz = Legitimuz({
         host: "https://api.legitimuz.com",
         token: "176512e3-43e6-479a-8dd8-fd58fa8acb8d",
-        onSuccess: (eventName) => {
-          console.log(eventName); // ocr | facematch
-        },
-        onError: (eventName) => {
-          console.log(eventName); // ocr | facematch
-        }
+        autoOpenValidation: true,
       });
 
     legitimuz.mount();
