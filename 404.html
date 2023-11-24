@@ -62,6 +62,12 @@
         host: "https://api.legitimuz.com",
         token: "176512e3-43e6-479a-8dd8-fd58fa8acb8d",
         autoOpenValidation: true,
+        onSuccess: (eventName) => {
+          console.log(eventName); // ocr | facematch
+        },
+        onError: (eventName) => {
+          console.log(eventName); // ocr | facematch
+        }
       });
 
     legitimuz.mount();
